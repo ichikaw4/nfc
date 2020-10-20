@@ -12,7 +12,7 @@ class User(db.Model):
         primary_key=True,
         autoincrement=True)
     name = db.Column(db.String(255), nullable=False)
-    nfc_id = db.Column(db.String(16), nullable=False)
+    nfc_id = db.Column(db.String(16), nullable=False, unique=True)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
     updated_at = db.Column(
         db.DateTime,

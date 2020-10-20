@@ -14,6 +14,7 @@ class Record(db.Model):
             'users.id',
             onupdate='CASCADE',
             ondelete='CASCADE'))
+    is_active = db.Column(db.Boolean, nullable=False, default=True)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
     updated_at = db.Column(
         db.DateTime,

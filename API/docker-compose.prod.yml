@@ -9,6 +9,7 @@ services:
       DB_PASSWORD: root
       DB_HOST: db
       DB_NAME: nfc
+      TZ: "Asia/Tokyo"
     ports:
       - 5000:5000
     command: ./start.sh
