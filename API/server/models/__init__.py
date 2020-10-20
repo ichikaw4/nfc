@@ -4,8 +4,8 @@ from .purpose import Purpose
 from .purposeMaster import PurposeMaster
 
 __all__ = [
-    User,
-    Record,
-    Purpose,
-    PurposeMaster
+    "User",
+    "Record",
+    "Purpose",
+    "PurposeMaster"
 ]
