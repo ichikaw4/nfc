@@ -1,0 +1,30 @@
+version: "3"
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    environment:
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_HOST: db
+      DB_NAME: nfc
+    ports:
+      - 5000:5000
+    volumes:
+      - ./server:/server
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nfc
+      MYSQL_USER: nfc
+      MYSQL_PASSWORD: nfc
+      TZ: "Azia/Tokyo"
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+    expose:
+      - 3306
